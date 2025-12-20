@@ -7,7 +7,7 @@ function App() {
     <div>
       <h1>Ryan Duan</h1>
 
-      <h2>Backend Engineer</h2>
+      <h2>Software Engineer</h2>
 
       <nav className="links" aria-label="Profile links">
         <a aria-label="GitHub" href="https://github.com/ryanduan02" target="_blank" rel="noreferrer">
@@ -31,3 +31,4 @@ function App() {
 }
 
 export default App
+ 
