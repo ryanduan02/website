@@ -20,6 +20,12 @@ function App() {
           <FaEnvelope />
         </a>
       </nav>
+
+      <img
+        className="profilePhoto"
+        src="/img.jpg"
+        alt="Photo of Ryan Duan"
+      />
     </div>
   )
 }

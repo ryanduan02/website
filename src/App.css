@@ -24,6 +24,18 @@ h2 {
   align-items: center;
 }
 
+.headerBlock {
+  max-width: 520px;
+}
+
+.profilePhoto {
+  margin-top: 14px;
+  width: 26%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
 .links a {
   text-decoration: none;
 }
