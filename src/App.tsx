@@ -1,5 +1,7 @@
 import "./App.css";
 
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt, FaRss } from "react-icons/fa";
+
 function App() {
   return (
     <div>
@@ -8,9 +10,15 @@ function App() {
       <h2>Backend Engineer</h2>
 
       <nav className="links" aria-label="Profile links">
-        <a href="https://github.com/ryanduan02" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/ryanduan/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="mailto:ryanduan02+website@gmail.com">Email</a>
+        <a aria-label="GitHub" href="https://github.com/ryanduan02" target="_blank" rel="noreferrer">
+          <FaGithub />
+        </a>
+        <a aria-label="LinkedIn" href="https://www.linkedin.com/in/ryanduan/" target="_blank" rel="noreferrer">
+          <FaLinkedin />
+        </a>
+        <a aria-label="Email" href="mailto:ryanduan02+website@gmail.com">
+          <FaEnvelope />
+        </a>
       </nav>
     </div>
   )
