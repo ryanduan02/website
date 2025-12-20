@@ -1,8 +1,8 @@
+import "./App.css";
+
 function App() {
   return (
-    <div style={{ textAlign: "center", marginTop: "24px" }}>
       <h1>Ryan Duan</h1>
-    </div>
   )
 }
 
