@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt, FaRss } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope} from "react-icons/fa";
 
 function App() {
   return (
