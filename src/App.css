@@ -28,12 +28,26 @@ h2 {
   max-width: 520px;
 }
 
-.profilePhoto {
+.contentWrapper {
+  display: flex;
+  gap: 32px;
   margin-top: 14px;
-  width: 26%;
+  align-items: flex-start;
+}
+
+.profilePhoto {
+  width: 200px;
   height: auto;
-  display: block;
   border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.about {
+  flex: 1;
+}
+
+.about h3 {
+  margin-top: 0;
 }
 
 .links a {
