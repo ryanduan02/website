@@ -125,3 +125,11 @@ h2 {
 .read-the-docs {
   color: #888;
 }
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px; /* controls icon size */
+  line-height: 1;
+}
