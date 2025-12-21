@@ -50,6 +50,37 @@ h2 {
   margin-top: 0;
 }
 
+.resume {
+  margin-top: 24px;
+  max-width: 520px;
+}
+
+.resume h3 {
+  margin-bottom: 12px;
+}
+
+.resumeItem {
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.jobHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.jobTitle {
+  font-weight: 600;
+}
+
+.jobMeta {
+  color: #666;
+  font-size: 0.9rem;
+}
+
 .links a {
   text-decoration: none;
 }
