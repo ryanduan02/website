@@ -81,6 +81,27 @@ h2 {
   font-size: 0.9rem;
 }
 
+.fullResumeLink {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.fullResumeLink h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+.fullResumeLink a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.fullResumeLink a:hover {
+  text-decoration: underline;
+}
+
 .links a {
   text-decoration: none;
 }

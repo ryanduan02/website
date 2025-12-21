@@ -119,6 +119,12 @@ function App() {
             library for teaching computational probability
           </p>
         </div>
+
+        <div className="fullResumeLink">
+          <a href="/Ryan_Duan_Resume.pdf" target="_blank" rel="noreferrer">
+            <h4>Full resume</h4>
+          </a>
+        </div>
       </aside>
     </div>
   );
