@@ -38,11 +38,8 @@ function App() {
           <p>
             I'm a Software Development Engineer at Amazon in New York, where I
             build and scale customer facing systems. Most recently, I worked on
-            the backend of an{" "}
-            <a href="https://techcrunch.com/2025/10/23/amazons-new-ai-shopping-tool-tells-you-why-you-should-buy-a-recommended-product/">
-              AI-powered shopping feature
-            </a>{" "}
-            delivered through the Amazon mobile app.
+            the backend of an AI-powered shopping feature delivered through the
+            Amazon mobile app.
           </p>
           <p>
             As an engineer, I have extensive experience with Java, Python,
@@ -69,11 +66,14 @@ function App() {
           </div>
           <p>
             I built and maintained backend components powering Amazon's
-            AI-driven “Help Me Decide” feature across core shopping flows,
-            including the development of novel product capabilities. I
-            decomposed backend services to improve extensibility and optimized
-            the cache by adjusting cache admission policy to only retain entries
-            with demonstratlue use potential to
+            AI-driven{" "}
+            <a href="https://techcrunch.com/2025/10/23/amazons-new-ai-shopping-tool-tells-you-why-you-should-buy-a-recommended-product/">
+              Help Me Decide
+            </a>{" "}
+            feature across core shopping flows, including the development of
+            novel product capabilities. I decomposed backend services to improve
+            extensibility and optimized the cache by adjusting cache admission
+            policy to only retain entries with demonstratlue use potential to
           </p>
         </div>
 
