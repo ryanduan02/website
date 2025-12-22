@@ -95,7 +95,7 @@ export function HomePage() {
 
         <div className="resumeItem">
           <div className="jobHeader">
-            <div className="jobTitle">Software Development Engineer</div>
+            <div className="jobTitle">Software Development Engineer Intern</div>
             <div className="jobMeta">New York, NY</div>
             <div className="jobMeta">May 2024 - August 2024</div>
           </div>
