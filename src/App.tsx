@@ -1,8 +1,126 @@
 import "./App.css";
-
+import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-function App() {
+type TabId = "home"; // extend later: | "projects" | "blog" | ...
+
+type TabConfig = {
+  id: TabId;
+  label: string;
+  render: () => React.ReactNode;
+};
+
+function Tabs({
+  tabs,
+  activeId,
+  onChange,
+  ariaLabel,
+}: {
+  tabs: TabConfig[];
+  activeId: TabId;
+  onChange: (id: TabId) => void;
+  ariaLabel: string;
+}) {
+  const tabRefs = React.useRef<Array<HTMLButtonElement | null>>([]);
+
+  const activeIndex = Math.max(
+    0,
+    tabs.findIndex((t) => t.id === activeId)
+  );
+
+  function focusTab(index: number) {
+    const clamped = (index + tabs.length) % tabs.length;
+    tabRefs.current[clamped]?.focus();
+  }
+
+  function onKeyDown(e: React.KeyboardEvent) {
+    // Roving focus + selection like typical tabs
+    switch (e.key) {
+      case "ArrowRight":
+      case "ArrowDown":
+        e.preventDefault();
+        focusTab(activeIndex + 1);
+        break;
+      case "ArrowLeft":
+      case "ArrowUp":
+        e.preventDefault();
+        focusTab(activeIndex - 1);
+        break;
+      case "Home":
+        e.preventDefault();
+        focusTab(0);
+        break;
+      case "End":
+        e.preventDefault();
+        focusTab(tabs.length - 1);
+        break;
+      case "Enter":
+      case " ":
+        e.preventDefault();
+        onChange(tabs[activeIndex].id);
+        break;
+      default:
+        break;
+    }
+  }
+
+  return (
+    <div className="tabShell">
+      <div
+        className="tabList"
+        role="tablist"
+        aria-label={ariaLabel}
+        onKeyDown={onKeyDown}
+      >
+        {tabs.map((tab, idx) => {
+          const selected = tab.id === activeId;
+          const tabId = `tab-${tab.id}`;
+          const panelId = `panel-${tab.id}`;
+
+          return (
+            <button
+              key={tab.id}
+              ref={(el) => {
+                tabRefs.current[idx] = el;
+              }}
+              id={tabId}
+              role="tab"
+              type="button"
+              className={`tab ${selected ? "tabActive" : ""}`}
+              aria-selected={selected}
+              aria-controls={panelId}
+              tabIndex={selected ? 0 : -1}
+              onClick={() => onChange(tab.id)}
+            >
+              {tab.label}
+            </button>
+          );
+        })}
+      </div>
+
+      {tabs.map((tab) => {
+        const selected = tab.id === activeId;
+        const tabId = `tab-${tab.id}`;
+        const panelId = `panel-${tab.id}`;
+
+        return (
+          <div
+            key={tab.id}
+            id={panelId}
+            role="tabpanel"
+            aria-labelledby={tabId}
+            hidden={!selected}
+            className="tabPanel"
+          >
+            {selected ? tab.render() : null}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function HomePage() {
   return (
     <div>
       <h1>Ryan Duan</h1>
@@ -26,7 +144,12 @@ function App() {
         >
           <FaLinkedin />
         </a>
-          <a aria-label="Email" href="mailto:ryanduan02+website@gmail.com" target="_blank" rel="noopener noreferrer">
+        <a
+          aria-label="Email"
+          href="mailto:ryanduan02+website@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaEnvelope />
         </a>
       </nav>
@@ -47,13 +170,19 @@ function App() {
             operating services in AWS.
           </p>
           <p>
-            I love playing games. Recently, I've taken
-            Clash Royale more seriously, reaching ultimate champion rank
-            multiple seasons in a row. In Clash of Clans I reached top 10k in
-            May 2025 in the builder base. I played chess competitively in high
-            school, but not so much anymore. I still play online from time to
-            time. You can find me {" "}
-              <a href="https://www.chess.com/member/ryanxd" target="_blank" rel="noopener noreferrer">here</a>.
+            I love playing games. Recently, I've taken Clash Royale more
+            seriously, reaching ultimate champion rank multiple seasons in a
+            row. In Clash of Clans I reached top 10k in May 2025 in the builder
+            base. I played chess competitively in high school, but not so much
+            anymore. I still play online from time to time. You can find me{" "}
+            <a
+              href="https://www.chess.com/member/ryanxd"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              here
+            </a>
+            .
           </p>
         </section>
       </div>
@@ -70,7 +199,11 @@ function App() {
           <p>
             I built and maintained backend components powering Amazon's
             AI-driven{" "}
-              <a href="https://techcrunch.com/2025/10/23/amazons-new-ai-shopping-tool-tells-you-why-you-should-buy-a-recommended-product/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://techcrunch.com/2025/10/23/amazons-new-ai-shopping-tool-tells-you-why-you-should-buy-a-recommended-product/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Help Me Decide
             </a>{" "}
             feature across core shopping flows, including the development of
@@ -124,7 +257,11 @@ function App() {
         </div>
 
         <div className="fullResumeLink">
-          <a href="/Ryan_Duan_Resume.pdf" target="_blank" rel="noopener noreferrer">
+          <a
+            href="/Ryan_Duan_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <h4>Full resume</h4>
           </a>
         </div>
@@ -133,4 +270,27 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  const tabs: TabConfig[] = React.useMemo(
+    () => [
+      { id: "home", label: "Home", render: () => <HomePage /> },
+      // Later:
+      // { id: "projects", label: "Projects", render: () => <ProjectsPage /> },
+      // { id: "writing", label: "Writing", render: () => <WritingPage /> },
+    ],
+    []
+  );
+
+  const [activeId, setActiveId] = React.useState<TabId>("home");
+
+  return (
+    <div className="appRoot">
+      <Tabs
+        tabs={tabs}
+        activeId={activeId}
+        onChange={setActiveId}
+        ariaLabel="Site sections"
+      />
+    </div>
+  );
+}
