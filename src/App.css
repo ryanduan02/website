@@ -1,31 +1,40 @@
 #root {
   max-width: 960px;
-  margin: 0;
-  padding-left: 24px;
-  padding-top: 8px;
-  padding-right: 0;
-  padding-bottom: 0;
+  margin: 0 auto;
+  padding: 24px;
   text-align: left;
 }
 
-h1 {
-  margin: 0;
-}
-
-h2 {
+h1, h2 {
   margin: 0;
 }
 
 .links {
-  margin-top: 2px;
+  margin-top: 6px;
   display: flex;
-  gap: 6px;
+  gap: 10px;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.headerBlock {
-  max-width: 520px;
+.links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  line-height: 1;
+  text-decoration: none;
+  padding: 6px;           /* bigger hit target */
+  border-radius: 8px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.links a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 .contentWrapper {
@@ -70,6 +79,7 @@ h2 {
   justify-content: space-between;
   gap: 12px;
   align-items: baseline;
+  flex-wrap: wrap; /* prevents awkward overflow */
 }
 
 .jobTitle {
@@ -102,55 +112,13 @@ h2 {
   text-decoration: underline;
 }
 
-.links a {
-  text-decoration: none;
-}
-
-.links a:hover {
-  text-decoration: underline;
-}
-
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 640px) {
+  .contentWrapper {
+    flex-direction: column;
+    gap: 16px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .profilePhoto {
+    width: 160px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px; /* controls icon size */
-  line-height: 1;
 }
