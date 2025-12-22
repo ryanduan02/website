@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import type { Writing } from "../types/writing";
 
 export function WritingPage() {
@@ -27,12 +28,34 @@ export function WritingPage() {
     */
   ];
 
-  const [activeSlug, setActiveSlug] = React.useState<string | null>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Extract slug from /writing/slug pathname
+  const activeSlug = React.useMemo(() => {
+    const pathname = location.pathname;
+    if (pathname === "/writing" || pathname === "/writing/") return null;
+
+    // Extract slug from /writing/slug
+    const match = pathname.match(/^\/writing\/(.+)$/);
+    return match ? match[1] : null;
+  }, [location.pathname]);
 
   const activePost = React.useMemo(
     () => posts.find((p) => p.slug === activeSlug) ?? null,
     [posts, activeSlug]
   );
+
+  const handlePostClick = React.useCallback(
+    (slug: string) => {
+      navigate(`/writing/${slug}`);
+    },
+    [navigate]
+  );
+
+  const handleBackClick = React.useCallback(() => {
+    navigate("/writing");
+  }, [navigate]);
 
   if (activePost) {
     return (
@@ -40,7 +63,7 @@ export function WritingPage() {
         <button
           type="button"
           className="writingBack"
-          onClick={() => setActiveSlug(null)}
+          onClick={handleBackClick}
         >
           ← Back to writing
         </button>
@@ -65,7 +88,7 @@ export function WritingPage() {
             <button
               type="button"
               className="postCard"
-              onClick={() => setActiveSlug(post.slug)}
+              onClick={() => handlePostClick(post.slug)}
               aria-label={`Open post: ${post.title}`}
             >
               <div className="postTitleRow">
