@@ -14,7 +14,7 @@ function App() {
           aria-label="GitHub"
           href="https://github.com/ryanduan02"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <FaGithub />
         </a>
@@ -22,11 +22,11 @@ function App() {
           aria-label="LinkedIn"
           href="https://www.linkedin.com/in/ryanduan/"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <FaLinkedin />
         </a>
-        <a aria-label="Email" href="mailto:ryanduan02+website@gmail.com">
+          <a aria-label="Email" href="mailto:ryanduan02+website@gmail.com" target="_blank" rel="noopener noreferrer">
           <FaEnvelope />
         </a>
       </nav>
@@ -53,7 +53,7 @@ function App() {
             May 2025 in the builder base. I played chess competitively in high
             school, but not so much anymore. I still play online from time to
             time. You can find me {" "}
-            <a href="https://www.chess.com/member/ryanxd">here</a>.
+              <a href="https://www.chess.com/member/ryanxd" target="_blank" rel="noopener noreferrer">here</a>.
           </p>
         </section>
       </div>
@@ -70,7 +70,7 @@ function App() {
           <p>
             I built and maintained backend components powering Amazon's
             AI-driven{" "}
-            <a href="https://techcrunch.com/2025/10/23/amazons-new-ai-shopping-tool-tells-you-why-you-should-buy-a-recommended-product/">
+              <a href="https://techcrunch.com/2025/10/23/amazons-new-ai-shopping-tool-tells-you-why-you-should-buy-a-recommended-product/" target="_blank" rel="noopener noreferrer">
               Help Me Decide
             </a>{" "}
             feature across core shopping flows, including the development of
@@ -124,7 +124,7 @@ function App() {
         </div>
 
         <div className="fullResumeLink">
-          <a href="/Ryan_Duan_Resume.pdf" target="_blank" rel="noreferrer">
+          <a href="/Ryan_Duan_Resume.pdf" target="_blank" rel="noopener noreferrer">
             <h4>Full resume</h4>
           </a>
         </div>
