@@ -1,5 +1,6 @@
 import "./App.css";
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { Tabs } from "./components/Tabs";
 import { HomePage } from "./pages/HomePage";
@@ -17,16 +18,30 @@ export default function App() {
     []
   );
 
-  const [activeId, setActiveId] = React.useState<TabId>("home");
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const activeId: TabId = React.useMemo(() => {
+    const pathname = location.pathname || "/";
+
+    // Treat any nested writing path as "writing" (e.g., /writing/foo).
+    if (pathname === "/writing" || pathname.startsWith("/writing/")) return "writing";
+
+    // Default to home for / and any unknown paths (Phase 3 will add a real 404 route).
+    return "home";
+  }, [location.pathname]);
+
+  const onTabChange = React.useCallback(
+    (id: TabId) => {
+      const path = id === "writing" ? "/writing" : "/";
+      navigate(path);
+    },
+    [navigate]
+  );
 
   return (
     <div className="appRoot">
-      <Tabs
-        tabs={tabs}
-        activeId={activeId}
-        onChange={setActiveId}
-        ariaLabel="Site sections"
-      />
+      <Tabs tabs={tabs} activeId={activeId} onChange={onTabChange} ariaLabel="Site sections" />
     </div>
   );
 }
