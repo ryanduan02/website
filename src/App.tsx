@@ -47,10 +47,13 @@ function App() {
             operating services in AWS.
           </p>
           <p>
-            Personally, I have a variety of interests. Recently, I've taken
+            I love playing games. Recently, I've taken
             Clash Royale more seriously, reaching ultimate champion rank
             multiple seasons in a row. In Clash of Clans I reached top 10k in
-            May 2025 in the builder base.
+            May 2025 in the builder base. I played chess competitively in high
+            school, but not so much anymore. I still play online from time to
+            time. You can find me {" "}
+            <a href="https://www.chess.com/member/ryanxd">here</a>.
           </p>
         </section>
       </div>
