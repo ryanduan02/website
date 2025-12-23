@@ -6,6 +6,7 @@ import { Tabs } from "./components/Tabs";
 import { HomePage } from "./pages/HomePage";
 import { WritingPage } from "./pages/WritingPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
+import { FavoriteImagesPage } from "./pages/FavoriteImagesPage";
 import type { TabConfig, TabId } from "./types/tabs";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       { id: "home", label: "Home", render: () => <HomePage /> },
       { id: "writing", label: "Writing", render: () => <WritingPage /> },
       { id: "projects", label: "Projects", render: () => <ProjectsPage /> },
+      { id: "favorite-images", label: "Favorite Images", render: () => <FavoriteImagesPage /> },
     ],
     []
   );
@@ -29,6 +31,9 @@ export default function App() {
     
     // Treat any nested projects path as "projects".
     if (pathname === "/projects" || pathname.startsWith("/projects/")) return "projects";
+    
+    // Treat any nested favorite-images path as "favorite-images".
+    if (pathname === "/favorite-images" || pathname.startsWith("/favorite-images/")) return "favorite-images";
 
     // Default to home for / and any unknown paths (Phase 3 will add a real 404 route).
     return "home";
@@ -36,8 +41,13 @@ export default function App() {
 
   const onTabChange = React.useCallback(
     (id: TabId) => {
-      const path = id === "writing" ? "/writing" : id === "projects" ? "/projects" : "/";
-      navigate(path);
+      const pathMap: Record<TabId, string> = {
+        home: "/",
+        writing: "/writing",
+        projects: "/projects",
+        "favorite-images": "/favorite-images",
+      };
+      navigate(pathMap[id]);
     },
     [navigate]
   );
