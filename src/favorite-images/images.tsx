@@ -12,7 +12,7 @@ export const favoriteImages: FavoriteImage[] = [
     src: "rcp.jpeg",
     alt: "RCP",
     description:
-      "Lawence, Kansas - Sports Pavillion lawrence - calm snowy night after the gym",
+      "Lawence, Kansas - Sports Pavillion Lawrence - calm snowy night after the gym",
         // photo source: taken by me
   },
   {
@@ -20,6 +20,13 @@ export const favoriteImages: FavoriteImage[] = [
     alt: "The Edge",
     description:
       "NYC - The Edge - the best view in Manhattan",
+        // photo source: taken by me
+  },
+  {
+    src: "1 and 2 Manhattan West.jpg",
+    alt: "1 and 2 Manhattan West",
+    description:
+      "NYC - 1 and 2 Manhattan West - New York looks like gotham when it rains",
         // photo source: taken by me
   },
 ];
