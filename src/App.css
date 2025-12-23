@@ -154,3 +154,28 @@ h2 {
   font-size: 28px; /* controls icon size */
   line-height: 1;
 }
+
+/* Writing page styles */
+.postTitleRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between; /* pushes title left, date right */
+  gap: 8px; /* adds small breathing room */
+}
+
+.postDate {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Remove bullets from writing post list */
+.postList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.postItem {
+  list-style: none;
+  margin: 0 0 12px 0;
+}

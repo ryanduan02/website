@@ -1,32 +1,9 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import type { Writing } from "../types/writing";
+// types are imported where needed; no local Writing type usage here
+import { posts } from "../writing/posts";
 
 export function WritingPage() {
-  const posts: Writing[] = [
-    /*
-    {
-      slug: "example-post",
-      title: "Example Post Title",
-      summary:
-        "A short 1–2 sentence summary describing what the reader will get out of this piece.",
-      date: "2025-12-01",
-      content: (
-        <>
-          <p>
-            This is the full post content. It renders on your website, not an
-            external link.
-          </p>
-          <h4>A section header</h4>
-          <p>
-            Write more paragraphs here. You can include <strong>bold</strong>,
-            lists, links, etc.
-          </p>
-        </>
-      ),
-    },
-    */
-  ];
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -92,10 +69,9 @@ export function WritingPage() {
               aria-label={`Open post: ${post.title}`}
             >
               <div className="postTitleRow">
-                <span className="postTitle">{post.title}</span>
+                <span className="postTitle">{post.title} | </span>
                 {post.date ? <span className="postDate">{post.date}</span> : null}
               </div>
-              <p className="postSummary">{post.summary}</p>
             </button>
           </li>
         ))}
