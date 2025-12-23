@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 // types are imported where needed; no local Writing type usage here
-import { posts } from "../writing/posts";
+import { posts } from "../writing/posts/index";
 
 export function WritingPage() {
 
