@@ -35,7 +35,11 @@ export function HomePage() {
       </nav>
 
       <div className="contentWrapper">
-        <img className="profilePhoto" src="/img.jpg" alt="Photo of Ryan Duan" />
+        <img
+          className="profilePhoto"
+          src={`${import.meta.env.BASE_URL}img.jpg`}
+          alt="Photo of Ryan Duan"
+        />
         <section className="about">
           <h3>About</h3>
           <p>
