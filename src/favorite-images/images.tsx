@@ -15,4 +15,11 @@ export const favoriteImages: FavoriteImage[] = [
       "Lawence, Kansas - Sports Pavillion lawrence - calm snowy night after the gym",
         // photo source: taken by me
   },
+  {
+    src: "the edge.jpeg",
+    alt: "The Edge",
+    description:
+      "NYC - The Edge - the best view in Manhattan",
+        // photo source: taken by me
+  },
 ];
