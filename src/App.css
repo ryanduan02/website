@@ -70,10 +70,13 @@ h2 {
 .resume {
   margin-top: 24px;
   max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .resume h3 {
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .resumeItem {
