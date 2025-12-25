@@ -258,6 +258,26 @@ h2 {
   border-radius: 8px;
 }
 
+@media (max-width: 900px) {
+  .galleryItem {
+    width: calc(50% - 8px);
+  }
+
+  .galleryImage {
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .galleryItem {
+    width: 100%;
+  }
+
+  .galleryImage {
+    height: 260px;
+  }
+}
+
 .imageDescription {
   margin-top: 8px;
   font-size: 0.9rem;
