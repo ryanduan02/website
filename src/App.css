@@ -1,11 +1,23 @@
 #root {
   max-width: 960px;
-  margin: 0;
+  margin: 0 auto;
   padding-left: 24px;
   padding-top: 8px;
-  padding-right: 0;
+  padding-right: 24px;
   padding-bottom: 0;
   text-align: left;
+}
+
+.tabShell {
+  width: 100%;
+}
+
+.tabList {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
 h1 {
