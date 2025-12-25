@@ -325,12 +325,39 @@ h2 {
   line-height: 1;
 }
 
+/* Projects page styles */
+.projects {
+  text-align: center;
+}
+
+/* Favorite Images page styles */
+.favorite-images {
+  text-align: center;
+}
+
 /* Writing page styles */
+.writing {
+  text-align: center;
+}
+
+.writing h3 {
+  margin-bottom: 24px;
+}
+
+.postList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .postTitleRow {
   display: flex;
   align-items: baseline;
-  justify-content: space-between; /* pushes title left, date right */
-  gap: 8px; /* adds small breathing room */
+  justify-content: center;
+  gap: 8px;
 }
 
 .postDate {
@@ -338,16 +365,17 @@ h2 {
   font-size: 0.9rem;
 }
 
-/* Remove bullets from writing post list */
-.postList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 .postItem {
   list-style: none;
   margin: 0 0 12px 0;
+}
+
+.postHeader {
+  text-align: center;
+}
+
+.postBody {
+  text-align: left;
 }
 
 /* Favorite Images gallery */
