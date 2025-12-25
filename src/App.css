@@ -244,6 +244,13 @@ h2 {
   margin-top: 16px;
 }
 
+.galleryImageButton {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
 .galleryItem {
   margin: 0;
   display: flex;
@@ -256,6 +263,26 @@ h2 {
   height: 400px; /* Taller for portrait orientation */
   object-fit: cover; /* Crop to fit */
   border-radius: 8px;
+}
+
+.favoriteImageDetail {
+  margin: 0;
+  margin-top: 16px;
+}
+
+.favoriteImageFull {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.favoriteImagesBack {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: underline;
 }
 
 @media (max-width: 900px) {
