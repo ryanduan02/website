@@ -1,53 +1,8 @@
-import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export function HomePage() {
-  const [theme, setTheme] = React.useState<"dark" | "light">(() => {
-    const current = document.documentElement.getAttribute("data-theme");
-    return current === "light" ? "light" : "dark";
-  });
-
-  const themeMenuRef = React.useRef<HTMLDetailsElement | null>(null);
-
-  React.useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
-
   return (
     <div>
-      <div className="themeToggle" aria-label="Theme selector">
-        <details className="themeDropdown" ref={themeMenuRef}>
-          <summary className="themeDropdownSummary">Theme</summary>
-
-          <div className="themeDropdownMenu" role="menu" aria-label="Theme options">
-            <button
-              type="button"
-              role="menuitemradio"
-              aria-checked={theme === "light"}
-              className={`themeDropdownItem ${theme === "light" ? "themeDropdownItemActive" : ""}`}
-              onClick={() => {
-                setTheme("light");
-                if (themeMenuRef.current) themeMenuRef.current.open = false;
-              }}
-            >
-              Light
-            </button>
-            <button
-              type="button"
-              role="menuitemradio"
-              aria-checked={theme === "dark"}
-              className={`themeDropdownItem ${theme === "dark" ? "themeDropdownItemActive" : ""}`}
-              onClick={() => {
-                setTheme("dark");
-                if (themeMenuRef.current) themeMenuRef.current.open = false;
-              }}
-            >
-              Dark
-            </button>
-          </div>
-        </details>
-      </div>
-
       <header className="homeHeader">
         <h1>Ryan Duan</h1>
 

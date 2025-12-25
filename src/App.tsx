@@ -10,6 +10,28 @@ import { FavoriteImagesPage } from "./pages/FavoriteImagesPage";
 import type { TabConfig, TabId } from "./types/tabs";
 
 export default function App() {
+  const [theme, setTheme] = React.useState<"dark" | "light">("dark");
+  const themeMenuRef = React.useRef<HTMLDetailsElement | null>(null);
+
+  React.useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  React.useEffect(() => {
+    function onPointerDown(e: PointerEvent) {
+      const menu = themeMenuRef.current;
+      if (!menu || !menu.open) return;
+      const target = e.target;
+      if (target instanceof Node && menu.contains(target)) return;
+      menu.open = false;
+    }
+
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, []);
+
   const tabs: TabConfig[] = React.useMemo(
     () => [
       { id: "home", label: "Home", render: () => <HomePage /> },
@@ -54,7 +76,46 @@ export default function App() {
 
   return (
     <div className="appRoot">
-      <Tabs tabs={tabs} activeId={activeId} onChange={onTabChange} ariaLabel="Site sections" />
+      <Tabs
+        tabs={tabs}
+        activeId={activeId}
+        onChange={onTabChange}
+        ariaLabel="Site sections"
+        trailing={
+          <div className="themeToggle" aria-label="Theme selector">
+            <details className="themeDropdown" ref={themeMenuRef}>
+              <summary className="themeDropdownSummary">Theme</summary>
+
+              <div className="themeDropdownMenu" role="menu" aria-label="Theme options">
+                <button
+                  type="button"
+                  role="menuitemradio"
+                  aria-checked={theme === "light"}
+                  className={`themeDropdownItem ${theme === "light" ? "themeDropdownItemActive" : ""}`}
+                  onClick={() => {
+                    setTheme("light");
+                    if (themeMenuRef.current) themeMenuRef.current.open = false;
+                  }}
+                >
+                  Light
+                </button>
+                <button
+                  type="button"
+                  role="menuitemradio"
+                  aria-checked={theme === "dark"}
+                  className={`themeDropdownItem ${theme === "dark" ? "themeDropdownItemActive" : ""}`}
+                  onClick={() => {
+                    setTheme("dark");
+                    if (themeMenuRef.current) themeMenuRef.current.open = false;
+                  }}
+                >
+                  Dark
+                </button>
+              </div>
+            </details>
+          </div>
+        }
+      />
     </div>
   );
 }

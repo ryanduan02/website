@@ -5,11 +5,13 @@ export function Tabs({
   tabs,
   activeId,
   onChange,
+  trailing,
   ariaLabel,
 }: {
   tabs: TabConfig[];
   activeId: TabId;
   onChange: (id: TabId) => void;
+  trailing?: React.ReactNode;
   ariaLabel: string;
 }) {
   const tabRefs = React.useRef<Array<HTMLButtonElement | null>>([]);
@@ -57,36 +59,40 @@ export function Tabs({
 
   return (
     <div className="tabShell">
-      <div
-        className="tabList"
-        role="tablist"
-        aria-label={ariaLabel}
-        onKeyDown={onKeyDown}
-      >
-        {tabs.map((tab, idx) => {
-          const selected = tab.id === activeId;
-          const tabId = `tab-${tab.id}`;
-          const panelId = `panel-${tab.id}`;
+      <div className="tabHeader">
+        <div
+          className="tabList"
+          role="tablist"
+          aria-label={ariaLabel}
+          onKeyDown={onKeyDown}
+        >
+          {tabs.map((tab, idx) => {
+            const selected = tab.id === activeId;
+            const tabId = `tab-${tab.id}`;
+            const panelId = `panel-${tab.id}`;
 
-          return (
-            <button
-              key={tab.id}
-              ref={(el) => {
-                tabRefs.current[idx] = el;
-              }}
-              id={tabId}
-              role="tab"
-              type="button"
-              className={`tab ${selected ? "tabActive" : ""}`}
-              aria-selected={selected}
-              aria-controls={panelId}
-              tabIndex={selected ? 0 : -1}
-              onClick={() => onChange(tab.id)}
-            >
-              {tab.label}
-            </button>
-          );
-        })}
+            return (
+              <button
+                key={tab.id}
+                ref={(el) => {
+                  tabRefs.current[idx] = el;
+                }}
+                id={tabId}
+                role="tab"
+                type="button"
+                className={`tab ${selected ? "tabActive" : ""}`}
+                aria-selected={selected}
+                aria-controls={panelId}
+                tabIndex={selected ? 0 : -1}
+                onClick={() => onChange(tab.id)}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {trailing ? <div className="tabTrailing">{trailing}</div> : null}
       </div>
 
       {tabs.map((tab) => {
