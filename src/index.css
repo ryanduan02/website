@@ -94,6 +94,10 @@ html[data-theme="high-contrast"] {
   --button-bg: #000000;
 }
 
+html[data-theme="high-contrast"] img {
+  filter: contrast(200%) brightness(110%);
+}
+
 html[data-theme="sepia"] {
   color-scheme: light;
 
