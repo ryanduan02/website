@@ -106,6 +106,10 @@ html[data-theme="sepia"] {
   --button-bg: #e8dcc4;
 }
 
+html[data-theme="sepia"] img {
+  filter: sepia(60%) saturate(0.8);
+}
+
 html[data-theme="monochrome"] {
   color-scheme: light;
 
