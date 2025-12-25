@@ -9,7 +9,7 @@ import { ProjectsPage } from "./pages/ProjectsPage";
 import { FavoriteImagesPage } from "./pages/FavoriteImagesPage";
 import type { TabConfig, TabId } from "./types/tabs";
 
-type ThemeId = "dark" | "light" | "high-contrast" | "sepia";
+type ThemeId = "dark" | "light" | "high-contrast" | "sepia" | "monochrome";
 
 export default function App() {
   const [theme, setTheme] = React.useState<ThemeId>("dark");
@@ -136,8 +136,18 @@ export default function App() {
                   }}
                 >
                   Sepia
-                </button>
-              </div>
+                </button>                <button
+                  type="button"
+                  role="menuitemradio"
+                  aria-checked={theme === "monochrome"}
+                  className={`themeDropdownItem ${theme === "monochrome" ? "themeDropdownItemActive" : ""}`}
+                  onClick={() => {
+                    setTheme("monochrome");
+                    if (themeMenuRef.current) themeMenuRef.current.open = false;
+                  }}
+                >
+                  Monochrome
+                </button>              </div>
             </details>
           </div>
         }
