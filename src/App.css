@@ -21,112 +21,21 @@
   margin-bottom: 16px;
 }
 
-.tabTrailing {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-}
-
-.mobileMenuButton {
-  display: none;
-  background: transparent;
-  border: 1px solid var(--border);
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: var(--text);
-}
-
-.mobileMenuButton:hover {
-  border-color: var(--text);
-}
-
-.hamburgerIcon {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  width: 20px;
-  height: 20px;
-}
-
-.hamburgerIcon span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: var(--text);
-  border-radius: 1px;
-}
-
-.mobileMenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  margin-top: 8px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  min-width: 180px;
-  padding: 8px;
-  flex-direction: column;
-  gap: 0;
-  z-index: 100;
-}
-
-.mobileMenu.mobileMenuOpen {
-  display: flex;
-}
-
-.mobileMenuItem {
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--text);
-  cursor: pointer;
-  text-align: left;
-  font: inherit;
-}
-
-.mobileMenuItem:hover {
-  border-color: var(--border);
-}
-
-.mobileMenuDivider {
-  height: 1px;
-  background-color: var(--border);
-  margin: 4px 0;
-}
-
-.desktopMenu {
-  display: inline-flex;
-  align-items: center;
-}
-
 @media (max-width: 639px) {
   .tabHeader {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .tabList {
-    width: auto;
+    width: 100%;
     justify-content: center;
   }
 
   .tabTrailing {
-    display: flex;
-    align-items: center;
-    gap: 0;
-  }
-
-  .mobileMenuButton {
-    display: block;
-  }
-
-  .desktopMenu {
-    display: none;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -158,6 +67,11 @@
 .tab:focus-visible {
   outline: 2px solid var(--text);
   outline-offset: 2px;
+}
+
+.tabTrailing {
+  display: inline-flex;
+  align-items: center;
 }
 
 .themeToggle {
