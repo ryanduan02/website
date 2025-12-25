@@ -3,36 +3,38 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 export function HomePage() {
   return (
     <div>
-      <h1>Ryan Duan</h1>
+      <header className="homeHeader">
+        <h1>Ryan Duan</h1>
 
-      <h2>Software Engineer</h2>
+        <h2>Software Engineer</h2>
 
-      <nav className="links" aria-label="Profile links">
-        <a
-          aria-label="GitHub"
-          href="https://github.com/ryanduan02"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub />
-        </a>
-        <a
-          aria-label="LinkedIn"
-          href="https://www.linkedin.com/in/ryanduan/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          aria-label="Email"
-          href="mailto:ryanduan02+website@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaEnvelope />
-        </a>
-      </nav>
+        <nav className="links" aria-label="Profile links">
+          <a
+            aria-label="GitHub"
+            href="https://github.com/ryanduan02"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub />
+          </a>
+          <a
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/ryanduan/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            aria-label="Email"
+            href="mailto:ryanduan02+website@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaEnvelope />
+          </a>
+        </nav>
+      </header>
 
       <div className="contentWrapper">
         <img
