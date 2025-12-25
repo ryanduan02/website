@@ -93,3 +93,15 @@ html[data-theme="high-contrast"] {
   --link-hover: #7fffd4;
   --button-bg: #000000;
 }
+
+html[data-theme="sepia"] {
+  color-scheme: light;
+
+  --bg: #f4ecd8;
+  --text: #3d2817;
+  --muted: #6b4423;
+  --border: #d4c4a8;
+  --link: #5c3a1f;
+  --link-hover: #3d2817;
+  --button-bg: #e8dcc4;
+}

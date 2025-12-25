@@ -9,7 +9,7 @@ import { ProjectsPage } from "./pages/ProjectsPage";
 import { FavoriteImagesPage } from "./pages/FavoriteImagesPage";
 import type { TabConfig, TabId } from "./types/tabs";
 
-type ThemeId = "dark" | "light" | "high-contrast";
+type ThemeId = "dark" | "light" | "high-contrast" | "sepia";
 
 export default function App() {
   const [theme, setTheme] = React.useState<ThemeId>("dark");
@@ -124,6 +124,18 @@ export default function App() {
                   }}
                 >
                   High Contrast
+                </button>
+                <button
+                  type="button"
+                  role="menuitemradio"
+                  aria-checked={theme === "sepia"}
+                  className={`themeDropdownItem ${theme === "sepia" ? "themeDropdownItemActive" : ""}`}
+                  onClick={() => {
+                    setTheme("sepia");
+                    if (themeMenuRef.current) themeMenuRef.current.open = false;
+                  }}
+                >
+                  Sepia
                 </button>
               </div>
             </details>
