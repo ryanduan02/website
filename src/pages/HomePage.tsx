@@ -51,7 +51,6 @@ export function HomePage() {
           />
         </a>
         <section className="about">
-          <h3>About</h3>
           <p>
             I'm a Software Development Engineer at Amazon in New York, where I
             build and scale customer facing systems. Most recently, I worked on
