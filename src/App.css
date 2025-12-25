@@ -131,7 +131,7 @@ h2 {
 }
 
 .jobMeta {
-  color: #666;
+  color: #ffffff;
   font-size: 0.9rem;
 }
 
@@ -149,7 +149,7 @@ h2 {
 }
 
 .fullResumeLink a {
-  color: #0066cc;
+  color: #ffffff;
   text-decoration: none;
   display: inline-block;
 }
@@ -200,7 +200,7 @@ h2 {
 }
 
 .read-the-docs {
-  color: #888;
+  color: #ffffff;
 }
 
 .links a {
@@ -220,7 +220,7 @@ h2 {
 }
 
 .postDate {
-  color: #666;
+  color: #ffffff;
   font-size: 0.9rem;
 }
 
@@ -290,6 +290,6 @@ h2 {
 .imageDescription {
   margin-top: 8px;
   font-size: 0.9rem;
-  color: #666;
+  color: #ffffff;
   text-align: center;
 }
