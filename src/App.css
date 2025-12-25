@@ -72,6 +72,29 @@ h2 {
   align-items: baseline;
 }
 
+@media (max-width: 640px) {
+  #root {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .profilePhoto {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .jobHeader {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
 .jobTitle {
   font-weight: 600;
 }
