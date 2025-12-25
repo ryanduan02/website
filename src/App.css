@@ -20,6 +20,94 @@
   margin-bottom: 16px;
 }
 
+.tab {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
+
+.tab:hover {
+  border-color: var(--text);
+}
+
+.tabActive {
+  border-color: var(--text);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.themeToggle {
+  position: fixed;
+  top: 12px;
+  left: 24px;
+  z-index: 10;
+
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.themeDropdown {
+  position: relative;
+}
+
+.themeDropdownSummary {
+  list-style: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.themeDropdownSummary::-webkit-details-marker {
+  display: none;
+}
+
+.themeDropdown[open] .themeDropdownSummary {
+  border-color: var(--text);
+}
+
+.themeDropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 140px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.themeDropdownItem {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
+
+.themeDropdownItem:hover {
+  border-color: var(--border);
+}
+
+.themeDropdownItemActive {
+  border-color: var(--text);
+}
+
 h1 {
   margin: 0;
 }
@@ -91,7 +179,7 @@ h2 {
 .resumeItem {
   margin-bottom: 16px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border);
 }
 
 .resumeItem p {
@@ -109,6 +197,10 @@ h2 {
   #root {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .themeToggle {
+    left: 16px;
   }
 
   .contentWrapper {
@@ -131,14 +223,14 @@ h2 {
 }
 
 .jobMeta {
-  color: #ffffff;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
 .fullResumeLink {
   margin-top: 16px;
   padding-top: 12px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border);
   text-align: center;
 }
 
@@ -149,7 +241,7 @@ h2 {
 }
 
 .fullResumeLink a {
-  color: #ffffff;
+  color: var(--link);
   text-decoration: none;
   display: inline-block;
 }
@@ -200,7 +292,7 @@ h2 {
 }
 
 .read-the-docs {
-  color: #ffffff;
+  color: var(--muted);
 }
 
 .links a {
@@ -220,7 +312,7 @@ h2 {
 }
 
 .postDate {
-  color: #ffffff;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
@@ -290,6 +382,6 @@ h2 {
 .imageDescription {
   margin-top: 8px;
   font-size: 0.9rem;
-  color: #ffffff;
+  color: var(--muted);
   text-align: center;
 }
