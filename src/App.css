@@ -21,6 +21,24 @@
   margin-bottom: 16px;
 }
 
+@media (max-width: 639px) {
+  .tabHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tabList {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tabTrailing {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 .tabList {
   display: flex;
   gap: 12px;
