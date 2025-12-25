@@ -196,6 +196,20 @@ h2 {
   text-align: center;
 }
 
+.sectionDivider {
+  height: 1px;
+  max-width: 520px;
+  margin: 32px auto 24px auto;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border) 12%,
+    var(--text) 50%,
+    var(--border) 88%,
+    transparent 100%
+  );
+}
+
 .resume {
   margin-top: 24px;
   max-width: 520px;

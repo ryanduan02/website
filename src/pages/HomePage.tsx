@@ -80,6 +80,8 @@ export function HomePage() {
         </section>
       </div>
 
+      <div className="sectionDivider" aria-hidden="true" />
+
       <aside className="resume" aria-label="Resume">
         <h3>Experience</h3>
 
