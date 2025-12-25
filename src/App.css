@@ -139,6 +139,7 @@ h2 {
   margin-top: 16px;
   padding-top: 12px;
   border-top: 1px solid #eee;
+  text-align: center;
 }
 
 .fullResumeLink h4 {
@@ -150,6 +151,7 @@ h2 {
 .fullResumeLink a {
   color: #0066cc;
   text-decoration: none;
+  display: inline-block;
 }
 
 .fullResumeLink a:hover {
