@@ -180,6 +180,12 @@ h2 {
   display: block;
 }
 
+.profilePhotoLink {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .about {
   flex: 1;
   text-align: center;

@@ -37,11 +37,19 @@ export function HomePage() {
       </header>
 
       <div className="contentWrapper">
-        <img
-          className="profilePhoto"
-          src={`${import.meta.env.BASE_URL}img.jpg`}
-          alt="Photo of Ryan Duan"
-        />
+        <a
+          className="profilePhotoLink"
+          href={`${import.meta.env.BASE_URL}img.jpg`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open full-size profile photo"
+        >
+          <img
+            className="profilePhoto"
+            src={`${import.meta.env.BASE_URL}img.jpg`}
+            alt="Photo of Ryan Duan"
+          />
+        </a>
         <section className="about">
           <h3>About</h3>
           <p>
