@@ -9,8 +9,10 @@ import { ProjectsPage } from "./pages/ProjectsPage";
 import { FavoriteImagesPage } from "./pages/FavoriteImagesPage";
 import type { TabConfig, TabId } from "./types/tabs";
 
+type ThemeId = "dark" | "light" | "high-contrast";
+
 export default function App() {
-  const [theme, setTheme] = React.useState<"dark" | "light">("dark");
+  const [theme, setTheme] = React.useState<ThemeId>("dark");
   const themeMenuRef = React.useRef<HTMLDetailsElement | null>(null);
 
   React.useEffect(() => {
@@ -110,6 +112,18 @@ export default function App() {
                   }}
                 >
                   Dark
+                </button>
+                <button
+                  type="button"
+                  role="menuitemradio"
+                  aria-checked={theme === "high-contrast"}
+                  className={`themeDropdownItem ${theme === "high-contrast" ? "themeDropdownItemActive" : ""}`}
+                  onClick={() => {
+                    setTheme("high-contrast");
+                    if (themeMenuRef.current) themeMenuRef.current.open = false;
+                  }}
+                >
+                  High Contrast
                 </button>
               </div>
             </details>

@@ -81,3 +81,15 @@ html[data-theme="light"] {
   --link-hover: #535bf2;
   --button-bg: #f9f9f9;
 }
+
+html[data-theme="high-contrast"] {
+  color-scheme: dark;
+
+  --bg: #000000;
+  --text: #ffff00;
+  --muted: #ffff00;
+  --border: #ffff00;
+  --link: #00ffff;
+  --link-hover: #7fffd4;
+  --button-bg: #000000;
+}
