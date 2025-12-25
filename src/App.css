@@ -47,9 +47,13 @@ h2 {
 
 .contentWrapper {
   display: flex;
+  flex-direction: column;
   gap: 32px;
   margin-top: 14px;
-  align-items: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+  max-width: 760px;
 }
 
 .profilePhoto {
@@ -57,14 +61,19 @@ h2 {
   height: auto;
   border-radius: 16px;
   flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .about {
   flex: 1;
+  text-align: center;
 }
 
 .about h3 {
   margin-top: 0;
+  text-align: center;
 }
 
 .resume {
@@ -85,6 +94,10 @@ h2 {
   border-bottom: 1px solid #eee;
 }
 
+.resumeItem p {
+  text-align: center;
+}
+
 .jobHeader {
   display: flex;
   justify-content: space-between;
@@ -99,9 +112,7 @@ h2 {
   }
 
   .contentWrapper {
-    flex-direction: column;
     gap: 16px;
-    align-items: stretch;
   }
 
   .profilePhoto {
