@@ -204,14 +204,12 @@ h2 {
   height: 1px;
   max-width: 520px;
   margin: 32px auto 24px auto;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--border) 12%,
-    var(--text) 50%,
-    var(--border) 88%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      var(--border) 12%,
+      var(--text) 50%,
+      var(--border) 88%,
+      transparent 100%);
 }
 
 .resume {
@@ -311,9 +309,11 @@ h2 {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -322,6 +322,7 @@ h2 {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -345,7 +346,8 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px; /* controls icon size */
+  font-size: 28px;
+  /* controls icon size */
   line-height: 1;
 }
 
@@ -421,13 +423,16 @@ h2 {
   margin: 0;
   display: flex;
   flex-direction: column;
-  width: calc(33.33% - 11px); /* Account for gap */
+  width: calc(33.33% - 11px);
+  /* Account for gap */
 }
 
 .galleryImage {
   width: 100%;
-  height: 400px; /* Taller for portrait orientation */
-  object-fit: cover; /* Crop to fit */
+  height: 400px;
+  /* Taller for portrait orientation */
+  object-fit: cover;
+  /* Crop to fit */
   border-radius: 8px;
 }
 
@@ -458,4 +463,74 @@ h2 {
   font-size: 0.9rem;
   color: var(--muted);
   text-align: center;
+}
+
+/* Projects page */
+.projects {
+  text-align: center;
+}
+
+.projectsTitle {
+  margin-bottom: 24px;
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.projectCard {
+  text-align: left;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 88%, var(--text) 12%);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.projectHeaderRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.projectTitle {
+  margin: 0;
+}
+
+.projectDate {
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.projectGithub {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--link);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.projectGithub:hover {
+  text-decoration: underline;
+}
+
+.projectDescription {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .projectHeaderRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 }
