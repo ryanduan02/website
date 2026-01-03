@@ -5,7 +5,7 @@ export const raspberrypiMetrics: Project = {
   date: "2026-01-02",
   githubUrl: "https://github.com/ryanduan02/raspberry-pi-system-control",
   description:
-    "This is abot that returns raspberry pi system metrics written in Golang." +
+    "This is a bot that returns raspberry pi system metrics written in Golang." +
     " (currently storage metrics, temperature metrics, and cooling units metrics)" +
     " I'm going to run compute and especially storage intensive tasks on my pi 24/7 so I'll have to" +
     " to monitor and control its metrics extremely carefully. ",
