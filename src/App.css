@@ -382,8 +382,9 @@ h2 {
 .postTitleRow {
   display: flex;
   align-items: baseline;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .postDate {
@@ -394,6 +395,17 @@ h2 {
 .postItem {
   list-style: none;
   margin: 0 0 12px 0;
+  width: 100%;
+  max-width: 760px;
+}
+
+.postCard {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 88%, var(--text) 12%);
+  border-radius: 12px;
+  padding: 12px 14px;
 }
 
 .postHeader {
